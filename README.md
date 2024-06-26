@@ -7,7 +7,7 @@ Downloads all posts, video, and image content from Slack, builds a browsable, lo
 1. On your Slack's webapp, go to Tools & Settings > Workspace Settings > Import/Export Data (button), and export everything. 'About this Workspace' in the Workspace Settings. Export the zip file.
 
 2. Get emoji token by following the [tutorial link](https://api.slack.com/tutorials/tracks/getting-a-token) WITH ANOTHER STEP ADDED:
- - Once you get to the 'Review summary & create your app' screen, edit the configurations. It needs this added to the list of scopes:
+ - Once you get to the 'Review summary & create your app' screen, edit the configurations. This needs to be added to the list of scopes:
 `emoji:read`
 Then, continue until you get the token.
 
