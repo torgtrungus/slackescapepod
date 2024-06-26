@@ -25,7 +25,7 @@ A directory with all content organized by channel, then by day - as HTML.
 
 ## Notes:
 
-This project has incomplete features but should get 95% of everything right - at least as far as my server was set up. For mystery reasons it may not work for you. If so, try to figure it out. I will not help you - this is basically software you found on the sidewalk and took home. Treat it as such.
+This project has incomplete features but should get 95% of everything right - at least as far as my server was set up. For mystery reasons it may not work for you. If so, try to figure it out. I will not provide support - this is basically software you found on the sidewalk and took home. Treat it as such.
 
 
 good luck
