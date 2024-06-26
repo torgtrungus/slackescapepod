@@ -1,22 +1,16 @@
 # slackescapepod
-Downloads all posts, video, and image content from Slack, builds a browsable, local copy of the server
+##Downloads all posts, video, and image content from Slack, builds a browsable, local copy of the server
 
 
 
 
-I had planned to release this eventually
-but as Slack recently (6/25/24) announced they are
-going to delete content older than 90 days
-maybe you don't want your content held hostage.
+I had planned to release this eventually but as Slack recently (6/25/24) announced they are going to delete content older than 90 days maybe you don't want your content held hostage.
 
 You will need admin access to the server to get all the JSONs and to get a token to use to download all the custom emojis.
 
-Don't blast their server too hard when downloading.
 
-Use polite request frequencies.
-
-
-TORG
+good luck
+-TORG
 
 
 
