@@ -7,7 +7,7 @@ Downloads all posts, video, and image content from Slack, builds a browsable, lo
 I had planned to release this eventually
 but as Slack recently (6/25/24) announced they are
 going to delete content older than 90 days
-- maybe you don't want your content held hostage.
+maybe you don't want your content held hostage.
 
 You will need admin access to the server to get all the JSONs.
 
