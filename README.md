@@ -1,5 +1,5 @@
 # slackescapepod
-##Downloads all posts, video, and image content from Slack, builds a browsable, local copy of the server
+## Downloads all posts, video, and image content from Slack, builds a browsable, local copy of the server
 
 
 
