@@ -14,7 +14,7 @@ Then, continue until you get the token.
 
 
 
-*I had planned to release this eventually but as Slack recently (6/25/24) announced they are going to delete content older than 90 days maybe you don't want your content held hostage.*
+*I had planned to release this eventually but as Slack recently (6/25/24) announced they are going to delete content older than 90 days, maybe you don't want your content held hostage.*
 
 ## Output
 
