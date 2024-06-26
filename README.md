@@ -19,7 +19,7 @@ Then, continue until you get the token.
 
 ## Output
 
-A directory with all content organized by channel, then by day - as HTML.
+A directory with all content organized by channel, then by day - as HTML resembling the Slack web interface (from 2022)
 
 
 
