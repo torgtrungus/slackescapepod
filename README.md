@@ -10,9 +10,9 @@
 1. **Export Slack Data** - On your Slack's webapp, go to Tools & Settings > Workspace Settings > Import/Export Data (button), and export the zip file of what you want to keep.
 
 2. (optional) **Get app token to rescue custom emojis** by following this [tutorial link](https://api.slack.com/tutorials/tracks/getting-a-token) *WITH ANOTHER STEP ADDED*:
- - Once you get to the 'Review summary & create your app' screen, edit the configurations. This needs to be added to the list of Bot Scopes:
-`emoji:read`
-Then, continue until you get the token. Warning: you may have to scroll around a little.
+ - Once you get to the 'Review summary & create your app' screen, edit the configurations. This line needs to be added to the list of Bot Scopes:
+`- emoji:read`
+Then, Install the app to the workplace and follow the prompts to return back to the page that will give you the token.
 
 3. Run Python script `slackexporter.py`
 
