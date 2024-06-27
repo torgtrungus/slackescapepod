@@ -1,6 +1,8 @@
-# Slack EscapePod - a Slack Exporter
-Downloads all posts, video, and image content from Slack, builds a browsable, local copy of the server.
-Supports threads, reactions and custom emojis. Organized by day.
+# Slack EscapePod : a Slack Exporter
+- Downloads all posts - including hidden posts older than 90 days - and associated video/image content from Slack.
+- Builds an offline, browsable, local copy of the server.
+- Supports threads, reactions and custom emojis. Organized by day.
+- Rescue your content before it falls into the black hole!
 
 
 ## Instructions
