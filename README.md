@@ -12,14 +12,14 @@ Supports threads, reactions and custom emojis. Organized by day.
 `emoji:read`
 Then, continue until you get the token.
 
-3. Run `slackexporter.py`
+3. Run Python script `slackexporter.py`
 
-
+ - A partial export can be continued by running the script again. It will not re-download content that has already been rescued. You can run it again and it will attempt to complete the 'export'.
 
 
 ## Output
 
-A directory with all content organized by channel, then by day - as HTML resembling the Slack web interface (from 2022)
+A directory with all content organized first by channel, and then by day - as HTML resembling the Slack web interface (from 2022)
 
 
 
