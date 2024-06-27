@@ -2,7 +2,7 @@
 - Downloads all posts - including hidden posts older than 90 days - and associated video/image content from Slack.
 - Builds an offline, browsable, local copy of the server.
 - Supports threads, reactions and custom emojis. Organized by day.
-- Rescue your content before it falls into the black hole!
+- Rescue your precious shitposts before they are deleted :)
 
 
 ## Instructions
