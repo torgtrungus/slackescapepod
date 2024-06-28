@@ -2,7 +2,7 @@
 - Downloads all posts - including hidden posts older than 90 days - and associated video/image content from Slack.
 - Builds an offline, browsable, local copy of the server.
 - Supports threads, reactions and custom emojis. Organized by day.
-- Rescue your precious shitposts before they are deleted :)
+- Rescue your precious shitposts :) (before they are deleted on August 26 2024)
 
 
 ![escapepod image with a pixel art craft flying away from a black hole](https://github.com/torgtrungus/slackescapepod/blob/main/logo.png?raw=true 'Escapepod logo')
@@ -33,7 +33,7 @@ Bot posts may appear blank.
 
 ## Notes
 
-*I had planned to release this eventually but Slack recently announced (6/25/24) they are going to delete content older than a year - and maybe people didn't want their content held hostage.*
+*I had planned to release this eventually but Slack recently announced (6/25/24) they are going to delete content older than a year. I figured maybe people didn't want their content held hostage.*
 *This project has incomplete features but should get 95% of everything right - at least as far as my server was set up. EscapePod was written on a whim, meant to get to a working state only, so it isn't as pleasant to work with as I'd like. For mystery reasons it may not work for you. If so, try to figure it out. I will not provide support - this is basically software you found on the sidewalk and took home. Treat it as such.*
 
 
