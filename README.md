@@ -2,7 +2,7 @@
 - Downloads all posts - including hidden posts older than 90 days - and associated video/image content from Slack.
 - Builds an offline, browsable, local copy of the server.
 - Supports threads, reactions and custom emojis. Organized by day.
-- Rescue your precious shitposts :) (before they are deleted on August 26 2024)
+- Rescue your precious shitposts before they are deleted on August 26, 2024 :)
 
 
 ![escapepod image with a pixel art craft flying away from a black hole](https://github.com/torgtrungus/slackescapepod/blob/main/logo.png?raw=true 'Escapepod logo')
