@@ -29,7 +29,7 @@ A directory with all content organized first by channel, and then by day - as HT
 
 ## Known Issues
 
-Bot posts may appear blank.
+Bot posts may appear blank. This was written on a whim, meant to get to a working state only, so it isn't as pleasant to work with as I'd like.
 
 ## Notes
 
