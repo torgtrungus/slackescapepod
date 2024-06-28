@@ -5,6 +5,8 @@
 - Rescue your precious shitposts before they are deleted :)
 
 
+![escapepod image with a pixel art craft flying away from a black hole](https://github.com/[torgtungus]/[slackescapepod]/blob/[main]/escapepod.png?raw=true)
+
 ## Instructions
 
 1. **Export Slack Data** - On your Slack's webapp, go to Tools & Settings > Workspace Settings > Import/Export Data (button), and export the zip file of what you want to keep.
@@ -29,7 +31,7 @@ A directory with all content organized first by channel, and then by day - as HT
 
 Bot posts may appear blank.
 
-## Notes:
+## Notes
 
 *I had planned to release this eventually but Slack recently announced (6/25/24) they are going to delete content older than a year - and maybe people didn't want their content held hostage.*
 *This project has incomplete features but should get 95% of everything right - at least as far as my server was set up. For mystery reasons it may not work for you. If so, try to figure it out. I will not provide support - this is basically software you found on the sidewalk and took home. Treat it as such.*
