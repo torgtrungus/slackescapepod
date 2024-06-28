@@ -1,0 +1,13 @@
+
+get the emoji token by following the tutorial link below, WITH ANOTHER STEP:
+
+Once you get to the 'Review summary & create your app' screen,
+Edit the configurations. It needs this added to the list of scopes:
+
+emoji:read
+
+Then, continue until you get the token.
+
+https://api.slack.com/tutorials/tracks/getting-a-token
+
+
