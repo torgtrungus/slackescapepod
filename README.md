@@ -24,7 +24,9 @@ Then, Install the app to the workplace and follow the prompts to return back to 
 A directory with all content organized first by channel, and then by day - as HTML resembling the Slack web interface (from 2022)
 
 
+## Known Issues
 
+Bot posts may appear blank.
 
 ## Notes:
 
