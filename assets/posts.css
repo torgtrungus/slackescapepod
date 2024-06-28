@@ -1,0 +1,719 @@
+:root {
+	--text: rgba(209,210,211,1); /*--sk_primary_foreground: 209,210,211;*/
+	--link: rgba(29,155,209,1); /*--sk_highlight: rgba(29,155,209);*/
+	--link_hover: rgba(99,179,228,1); /*--sk_highlight_hover: rgba(99,179,228);*/
+	--darker_text: rgba(171,171,173,1); /* --sk_foreground_max_solid: 171,171,173; */
+	--reaction_bg:  rgba(var(--sk_foreground_min,29,28,29),.04);
+	--sk_foreground_min: 232,232,232;
+	--tooltip_outline: rgba(200,200,200,.35);
+	--hover_highlight_bg: #222529;
+	--bg_color: #1a1d21;
+
+	--foreground_mid: 232,232,232; /* --sk_foreground_mid: 232,232,232;*/
+    --foreground_low: 232,232,232; /*--sk_foreground_low: 232,232,232;*/
+    /* This is the code markup bg color:  background-color: rgba(var(--sk_foreground_min,29,28,29),.04);*/
+    --reply_bar_border: rgba(var(--foreground_low,29,28,29),0.13);
+
+    --blue_link_hover: 64,179,228; /* --sk_highlight_hover: 64,179,228;*/
+    --highlight: 29,155,209; /* --sk_highlight */
+
+    --foreground_high_solid: 129,131,133;/*--sk_foreground_high_solid: 129,131,133;*/
+    --foreground_low_solid: 53,55,59; /*--sk_foreground_low_solid: 53,55,59;*/
+}
+
+*, ::after, ::before {
+	box-sizing: inherit;
+}
+
+@font-face {
+    font-family: ns_reg;
+    src: url(NotoSans-Regular.ttf);
+}
+
+body {
+    font-family: ns_reg;
+    background-color: var(--bg_color);
+    color: var(--text);
+}
+
+.post { /* this applies to each post, even ones without an av */
+	padding: 8px 20px; /* moved from another gutter to this */
+	font-size: 15px;
+	line-height:  1.46668;
+	/*height: 32px;*/
+	display: flex;
+	color: var(--text);
+	word-wrap: break-word;
+}
+
+.post:hover {
+	background-color: var(--hover_highlight_bg);
+}
+
+.gutter_l { /* left: holds the avatar and if no av it shows the timestamp on hover */
+	/*display: flex;*/
+	flex-shrink: 0;
+	margin-right: 8px;
+	float: left; /* added to prevent it taking over the whole row*/
+}
+
+.av { /* increased from 36 to 48  (note: originally the av img uses the 48 size src scaled to 36) */
+	height: 48px;
+	width: 48px;
+}
+
+.av_icon_container { /* adds rounded corners to avs */
+	background-color: rgba(var(--foreground_low,29,28,29),.13);
+	border-radius: 4px;
+	color: rgba(var(--sk_primary_foreground,29,28,29),1);
+	display: block;
+	flex-shrink: 0;
+	overflow: hidden;
+	position: relative;
+	height: 48px; /* moved from inline style to css */
+	width: 48px;
+}
+
+.button_unstyled { /* generic button attribs for formatting */
+	background: none;
+	border: 0;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	line-height: inherit;
+	margin: 0;
+	overflow: initial;
+	padding: 0;
+	text-align: initial;
+	vertical-align: initial;
+}
+
+.av_button { /* links to profile page */
+	height: 36px; /* originally 36px */
+	width: 36px;
+}
+
+.av_icon {
+	background-color: rgba(var(--foreground_low,29,28,29),.13); /* todo: consolidate this to above */
+	border-radius: 4px;
+	color: rgba(var(--sk_primary_foreground,29,28,29),1);
+	flex-shrink: 0;
+	position: relative;
+}
+
+.gutter_r { /* right: holds poster name (if applicable) and message content, timestamp */
+	flex: 1 1 0;
+	margin: -12px -8px -16px -16px;
+	min-width: 0;
+	padding: 8px 8px 8px 16px;
+	float: left;
+}
+
+.sender {
+	font-weight: 900;
+}
+
+.sender_link {
+	color: rgba(var(--text,29,28,29),1);
+}
+
+a:active, a:focus, a:hover {
+	text-decoration: underline;
+}
+
+a {
+	color: rgba(var(--highlight,18,100,163),1);
+	text-decoration: none;
+}
+
+.timestamp_link:hover { /* corrects underline color in link */
+	text-decoration-color: var(--darker_text); 
+	opacity: 1;
+
+}
+
+
+.timestamp {
+	color: var(--darker_text);
+	font-size: 11px;
+	text-align: right;
+	margin-left: 4px;
+}
+
+.post_block {
+	margin-bottom: 4px;
+	max-width: none;
+	word-wrap: break-word;
+	text-align: left;
+	width: 100%;
+	/*display: flex;*/ /* doing this is very bad. */
+}
+
+.tombstone_text {
+	color: var(--darker_text);
+}
+
+svg.tombstone_svg {
+	font-size: 20px;
+}
+
+.tombstone_icon {
+	align-items: center;
+	background: rgba(var(--foreground_low,29,28,29),.13);
+	border-radius: 3px;
+	color: rgba(var(--foreground_low,29,28,29),.5);
+	display: flex;
+	height: 48px;
+	justify-content: center;
+	width: 48px;
+}
+
+
+.hidden_timestamp_container {
+	margin-top: -4px;
+	margin-right: 0px;
+	margin-bottom: -4px;
+	margin-left: -8px;
+	text-align: right;
+	/*margin-left: -8px;  -20px originally, remove 12 since we increased the av by 12 */
+	width: 56px;
+	opacity: 0;
+}
+
+.noav:hover .hidden_timestamp_container{ /* the second item is the target of the noav hover action */
+	opacity : 1; /* which raises opacity to 1 */
+}
+
+.link {
+	color: var(--link);
+	text-decoration: none;
+}
+.link:hover {
+	color: var(--link_hover);
+}
+
+.filename {
+	font-size: 12px;
+	color: var(--darker_text);
+}
+
+img.thumbnail {
+	border-radius: 8px;
+	margin: 0;
+	margin-top: 4pxa;
+	padding: 0;
+}
+
+img.gif_embed {
+	max-width: 300px; /* why not */
+}
+
+img.small_emoji {
+	width:  16px;
+	height:  16px;
+}
+
+.reaction { /* little emoji bubble button that you can hover over (actual hover stuff uses reaction_tooltip though) */
+	margin: 4px;
+	border-radius: 12px;
+	align-items: center;
+	line-height: 16px;
+	padding: 4px 6px;
+	background-color: var(--reaction_bg);
+	border-width: 1px;
+	border-color: rgba(0,0,0,0);
+	/*vertical-align: top;*/
+	text-align: center;
+	border-style: solid;
+	cursor: pointer;
+}
+
+.reaction:hover { /* small bubble becomes more prominent */
+	background-color: #1a1d21; /* todo: consolidate */
+	border-width: 1px;
+	border-color: var(--tooltip_outline);
+}
+
+.reaction_count {
+	font-size: 11px;
+	color:  var(--text);
+ 	vertical-align: 17%; /* only way to actually have it center itself */
+}
+
+/* thanks w3schools */
+
+.reaction_tooltip {
+	position: relative;
+	display: inline-block;
+	/*border-bottom: 1px dotted black;*/ /* If you want dots under the hoverable text */
+	align_items: center;
+}
+
+/* Tooltip text */
+.reaction_tooltip .tooltiptext {
+	visibility: hidden;
+	width: 160px;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -80px; /* half of width */
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid var(--tooltip_outline); /* border */
+}
+
+.reaction_tooltip .tooltiptext::after { /* arrow at bottom */
+	content: "";
+	position: absolute;
+	top: 100%; /* At the bottom of the tooltip */
+	left: 50%;
+	/*bottom: -50px;*/
+	/*height: 0;*/
+	/*width:  0;*/
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+}
+
+.reaction_tooltip .tooltiptext::before { /* outline on arrow */
+	content: "";
+	position: absolute;
+	top: 100%; /* At the bottom of the tooltip */
+	left: 50%;
+	/*bottom: -50px;*/
+	/*height: 0;*/
+	/*width:  0;*/
+	margin-left: -6px;
+	border-width: 6px;
+	border-style: solid;
+	border-color: var(--tooltip_outline) transparent transparent transparent;
+}
+
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.reaction_tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+.users_reaction {
+	font-size: 13px;
+	font-weight: 600;
+
+}
+
+.reacted_with {
+	font-size: 11px;
+	color: var(--darker_text);
+
+}
+
+img.emoji_in_text {
+	/*border-radius: 6px;*/
+	/*background-color: white;*/
+	max-width: 32px;
+	max-height: 32px;
+}
+
+img.big_emoji_in_tooltip {
+	border-radius: 6px;
+	background-color: white;
+	width: 48px;
+	height: 48px;
+}
+
+.big_html_emoji_in_tooltip {
+	font-size: 50px;
+}
+
+ /* -------------- */
+
+.reply_bar {
+	margin-bottom: 4px;
+	margin-top: -4px;
+	margin-left: -5px;
+	align-items: center;
+	border: 1px solid #0000;
+	border-radius: 6px;
+	cursor: pointer;
+	display: flex;
+	font-size: 13px;
+	height: 24px; /* 36px is too tall */
+	max-width: 600px;
+	overflow: hidden;
+	padding: 4px;
+}
+
+.reply_bar:hover .reply_bar_last_reply { /* make last reply invisible on hover */
+  opacity: 0;
+}
+
+.reply_bar:hover {
+	background-color: var(--bg_color);
+	border: 1px solid var(--reply_bar_border);
+
+}
+
+.reply_bar:hover .reply_bar_arrow {
+	opacity: 1;
+	color: rgba(var(--foreground_high_solid,134,134,134),1);
+}
+
+.reply_bar:hover .reply_bar_view_thread { /* show view thread on hover */
+  opacity: 1;
+}
+
+.reply_bar_avatar {
+	height: 24px;
+	width: 24px;
+	flex-shrink: 0;
+	margin-right: 4px;
+}
+
+img.reply_bar_avatar_image {
+	border-radius: 4px;
+}
+
+a.reply_count {
+	flex-shrink: 0;
+	font-weight: 700;
+	margin-left: 3px;
+}
+
+a.reply_count:hover {
+	color: rgba(var(--blue_link_hover,11,76,140),1);
+}
+
+.reply_bar_description {
+	color: rgba(var(--sk_foreground_max_solid,97,96,97),1);
+	flex: 1;
+	margin-left: 8px;
+	overflow: hidden;
+	position: relative;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.reply_bar_last_reply {
+	opacity: 1;
+	transition: opacity .2s;
+	color:  var(--darker_text);
+}
+
+.reply_bar_view_thread {
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	text-overflow: ellipsis;
+	top: 0;
+	transition: opacity .2s;
+	white-space: nowrap;
+	color:  var(--darker_text);
+}
+
+.reply_bar_arrow {
+	vertical-align: top;
+	font-size: 20px;
+	font-weight: 900px;
+	opacity: 0;
+	margin-left: auto;
+	margin-right: 8px;
+	margin-bottom: 6px;
+}
+
+.broadcast { /* when replying to a thread but also the channel */
+	flex: 1 1 0;
+	margin: 0;
+	display: flex;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.broadcast_preamble {
+	color: var(--darker_text);/*rgba(var(--darker_text,97,96,97),1);*/
+}
+
+.broadcast_footer { /* this is a button */
+	margin: -4px 0 4px;
+	display: block;
+	font-size: 12px;
+	/*font-weight: 400;*/
+	font-weight: 700;
+	line-height: 1.50001;
+	margin-top: 8px;
+	background: none;
+	border: 0;
+	overflow: initial;
+	padding: 0;
+	text-align: initial;
+	text-decoration: none;
+	margin: -4px 0 4px;
+	cursor: pointer;
+	color: rgba(var(--highlight,18,100,163),1);
+}
+
+.broadcast_footer:hover {
+	color: rgba(var(--blue_link_hover,11,76,140),1);
+	text-decoration: underline;
+	outline: none;
+	cursor: pointer;
+}
+
+a.broadcast_preamble_link {
+	cursor: pointer;
+	display: block;
+	font-weight: 700;
+	margin-left: 4px;
+	margin-right: 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+a.broadcast_preamble_link:hover {
+	color: rgba(var(--blue_link_hover,11,76,140),1);
+}
+
+.blockquote {
+	padding-left: 16px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	position: relative;
+	/*border-left: 8px solid rgba(var(--text,29,28,29),1);*/
+}
+.blockquote::before {
+	background: var(--text,29,28,29);
+	border-radius: 8px;
+	bottom: 0;
+	content: "";
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 4px; 
+}
+
+
+ol.ordered_list {
+	list-style:decimal;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+ul.unordered_list {
+	/*list-style-type: none; this removes the bullet*/
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+li {
+	margin-left:24px; 
+}
+
+.text_emoji {
+/*	font-size: 22px;*/
+/* this messes up the line height, until we make images ignore this */
+}
+
+
+/* ----------------------- thread viewer --------------------- */
+
+.sidepanel  {
+	display: flex;
+	flex-direction: column; /* added this and above */
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	height: 100%;
+	top: 0;
+	right: 0;
+	background-color: var(--bg_color);
+	overflow-x: hidden;
+	transition: 0.00s;
+	/*padding-top: 60px;*/
+	border-left: 1px solid rgba(var(--foreground_low,29,28,29),.13);
+}
+
+.sidepanel a.closebtn {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.00s;
+  border: 1px;
+}
+
+/*.sidepanel a.closebtn:hover {
+  color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}*/
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color:#444;
+}
+
+
+.thread_header_container {
+	border-bottom: none;
+	box-shadow: 0 1px 0 0 rgba(var(--foreground_low,29,28,29),0.13);
+	z-index: 1;
+	padding: 0 12px 0 16px;
+}
+
+.thread_header_center {
+	height: 49px;
+	align-items: center;
+	display: flex;
+	flex: 1;
+	font-size: 15px;
+	height: 63px;
+	line-height: 1.46668;
+	min-width: 0;
+	font-weight: 900;
+
+}
+
+.thread_header_content {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	margin-right: auto;
+	min-width: 0;
+}
+
+.thread_title {
+	align-items: baseline;
+	display: flex;
+	font-size: 18px;
+	font-weight: 900;
+	line-height: 1.33334;
+}
+
+.thread_subtitle { /* '# channel' container*/
+	margin: 0 8px;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.thread_subtitle_channel_name {
+	color: rgba(var(--foreground_low,29,28,29),.7);
+	cursor: pointer;
+	display: block;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.38463;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--lines);
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: break-spaces;
+	margin-right: 2px;
+	display: inline;
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+a.channel_link {
+	display: inline-block;
+	position: relative;
+	/*top: 4px;*/
+	text-decoration: none;
+}
+
+button.close_button {
+	color: #ffffffb3;
+	cursor: pointer;
+	height: 36px;
+	width: 36px;
+	align-items: center;
+	border-radius: 4px;
+	display: inline-flex;
+	justify-content: center;
+	position: relative;
+	background: none;
+	border: 0;
+	font: inherit;
+	line-height: inherit;
+	margin: 0;
+	overflow: initial;
+	padding: 0;
+	text-align: initial;
+}
+
+#frame {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+	position: relative;
+	border: 0px;
+}
+
+.flexpane_separator { /* separate OP from the rest with a line */
+	top: 64px;
+	/*position: absolute;*/
+	width: 100%;
+	margin-bottom: -2px;
+}
+
+.flexpane_separator_inner {
+	align-items: center;
+	display: flex;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	padding-left: 16px;
+	position: relative;
+	width: calc(100% - 22px);
+}
+
+.flexpane_separator_count {
+	color: rgba(var(--darker_text,29,28,29),.7);
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.38463;
+	margin-right: 12px;
+}
+
+hr.flexpane_separator_line {
+	border-top-color: rgba(var(--sk_foreground_low,29,28,29),.13);
+	border-color:  red;
+	margin: 1px 0 0;
+	border: none;
+	border-top: 1px solid rgba(var(--foreground_low_solid,221,221,221),1);
+	padding: 0;
+	flex: 1;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 0%;
+}
