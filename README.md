@@ -5,7 +5,7 @@
 - Rescue your precious shitposts before they are deleted :)
 
 
-![escapepod image with a pixel art craft flying away from a black hole](https://github.com/torgtungus]slackescapepod/blob/main/escapepod.png?raw=true 'Escapepod logo')
+![escapepod image with a pixel art craft flying away from a black hole](https://github.com/torgtungus/slackescapepod/blob/main/escapepod.png?raw=true 'Escapepod logo')
 
 ## Instructions
 
