@@ -11,8 +11,8 @@
 
 2. (optional) **Get app token to rescue custom emojis** by following this [tutorial link](https://api.slack.com/tutorials/tracks/getting-a-token) *WITH ANOTHER STEP ADDED*:
 
- - Once you get to the 'Review summary & create your app' screen, edit the configurations.
- - This line needs to be added to the list of Bot Scopes: `- emoji:read`.
+ - Once you get to the 'Review summary & create your app' screen, edit the configurations:
+   This line needs to be added to the list of Bot Scopes: `- emoji:read`.
  - Then, install the app to the workplace. Follow the prompts to return back to the page that will give you the token.
 
 3. Run Python script `slackexporter.py`
